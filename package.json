@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node telegram-bot.js"
+
+    "start": "pnpm install &&node telegram-bot.js"
   },
   "dependencies": {
     "node-telegram-bot-api": "^0.64.0",
