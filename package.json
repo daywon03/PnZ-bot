@@ -1,5 +1,11 @@
 {
-	"dependencies": {
-		"dotenv": "^17.2.3"
-	}
+  "scripts": {
+    "start": "node telegram-bot.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0",
+    "axios": "^1.6.0",
+	"dotenv": "^17.2.3"
+  }
 }
+

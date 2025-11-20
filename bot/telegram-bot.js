@@ -1,4 +1,5 @@
 // Telegram Bot Server
+require('dotenv').config();
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const API_URL = process.env.NEXT_PUBLIC_BASE_URL ;
 
