@@ -62,8 +62,8 @@ async function initBot() {
           
           await bot.sendMessage(chatId, 
             `✅ Account linked successfully!\n\n` +
-            `Welcome ${response.data.user.name}!\n\n` +
-            `You can now start adding contacts by sending /start again.`
+            `Welcome ${response.data.user.name}! Friend\n\n` +
+            `Let's add you to PnZ's contacts by sending /start again.`
           );
           return;
         } catch (error) {
@@ -78,8 +78,7 @@ async function initBot() {
       conversationState.set(telegramId, { step: 1, data: {} });
       
       await bot.sendMessage(chatId,
-        `👋 Hi! Let's add a new contact to your PnZ Contacts.\n\n` +
-        `What's the person's full name?`
+        `What's your full name?`
       );
     });
     
@@ -100,20 +99,20 @@ async function initBot() {
           data.name = text;
           state.step = 2;
           conversationState.set(telegramId, state);
-          await bot.sendMessage(chatId, `Great! What's ${data.name}'s position/job title?`);
+          await bot.sendMessage(chatId, `Great! What's your position/job title?`);
         }
         else if (step === 2) {
           data.position = text;
           state.step = 3;
           conversationState.set(telegramId, state);
-          await bot.sendMessage(chatId, `What company does ${data.name} work for?`);
+          await bot.sendMessage(chatId, `What company do you work for?`);
         }
         else if (step === 3) {
           data.company = text;
           state.step = 4;
           conversationState.set(telegramId, state);
           await bot.sendMessage(chatId,
-            `What's ${data.name}'s Telegram contact? (username or phone)\n\n` +
+            `What's ${data.name}'s Telegram contact? (username or phone number)\n\n` +
             `You can type "skip" if you don't have this information.`
           );
         }
@@ -122,7 +121,7 @@ async function initBot() {
           state.step = 5;
           conversationState.set(telegramId, state);
           await bot.sendMessage(chatId,
-            `Any additional notes about ${data.name}?\n\n` +
+            `Any additional notes about yourself or what you want to discuss ?\n\n` +
             `(You can type "skip" to skip this)`
           );
         }

@@ -1,12 +1,11 @@
 {
   "scripts": {
-
     "start": "cd bot && node telegram-bot.js"
   },
   "dependencies": {
-    "node-telegram-bot-api": "^0.64.0",
+    "a": "^4.0.0",
     "axios": "^1.6.0",
-	"dotenv": "^17.2.3"
+    "dotenv": "^17.2.3",
+    "node-telegram-bot-api": "^0.64.0"
   }
 }
-
