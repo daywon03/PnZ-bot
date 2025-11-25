@@ -130,11 +130,15 @@ async function initBot() {
           state.step = 6;
           conversationState.set(telegramId, state);
           await bot.sendMessage(chatId,
-            `Finally, would you like to add a profile picture?\n\n` +
-            `You can send me a photo or type "skip" to skip this step.`,
+              `Finally, let's add a profile picture!\n\n` +
+              `📸 You can take a selfie using the button below,\n` +
+              `or press Skip to continue without a photo.`,
             {
               reply_markup: {
-                keyboard: [[{ text: '⏭️ Skip Photo' }]],
+                keyboard: [
+                          [{ text: '📸 Take Selfie' }],
+                          [{ text: '⏭️ Skip Photo' }],
+                        ],
                 one_time_keyboard: true,
                 resize_keyboard: true
               }
